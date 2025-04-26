@@ -1,7 +1,7 @@
 {
   "name": "Remaining_Items_List",
   "version_number": "1.0.0",
-  "website_url": "https://github.com/YourUsername/RemainingItemsList",
+  "website_url": "https://github.com/Ipertatos/RemainingItemsList",
   "description": "Shows a list of all items remaining in the map when the level ends, with their values.",
   "dependencies": [
     "BepInEx-BepInExPack-5.4.2100"
