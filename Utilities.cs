@@ -11,7 +11,7 @@ namespace RemainingItemsList
         {
             yield return new WaitForSeconds(delay);
             
-            if (RemainingItemsList.listPanelInstance != null)
+            if (RemainingItemsList.listPanelInstance)
             {
                 RemainingItemsList.listPanelInstance.SetActive(false);
                 RemainingItemsList.isPanelVisible = false;

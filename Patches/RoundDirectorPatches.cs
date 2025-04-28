@@ -15,7 +15,10 @@ namespace RemainingItemsList.Patches
             // Make sure we're in a level
             if (RoundDirector.instance == null || !IsInLevel())
                 return;
-
+            // Check if all extraction points are completed
+            if (!RoundDirector.instance.allExtractionPointsCompleted)
+                return;
+            
             RemainingItemsList.Logger.LogInfo("Extraction Completed! Checking for remaining items...");
             
             // Get all remaining items
@@ -28,13 +31,9 @@ namespace RemainingItemsList.Patches
         // Helper to check if we're in a level
         private static bool IsInLevel()
         {
-            if (RoundDirector.instance == null)
-                return false;
-                
-            // Use RoundDirector fields to determine if we're in a level
-            // The code below checks if the level manager is active
-            return RoundDirector.instance.gameObject.scene.isLoaded 
-                && RoundDirector.instance.isActiveAndEnabled;
+            return RoundDirector.instance != null &&
+                   RoundDirector.instance.gameObject.scene.isLoaded &&
+                   RoundDirector.instance.isActiveAndEnabled;
         }
     }
-} 
+}
